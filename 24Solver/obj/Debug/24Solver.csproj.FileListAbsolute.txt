@@ -5,3 +5,10 @@ E:\_Visual Studio\24Solver\24Solver\24Solver\obj\Debug\24Solver.csprojAssemblyRe
 E:\_Visual Studio\24Solver\24Solver\24Solver\obj\Debug\24Solver.csproj.CoreCompileInputs.cache
 E:\_Visual Studio\24Solver\24Solver\24Solver\obj\Debug\24Solver.exe
 E:\_Visual Studio\24Solver\24Solver\24Solver\obj\Debug\24Solver.pdb
+E:\_Visual Studio\24Solver\24Solver\24-Solver\24Solver\bin\Debug\24Solver.exe.config
+E:\_Visual Studio\24Solver\24Solver\24-Solver\24Solver\bin\Debug\24Solver.exe
+E:\_Visual Studio\24Solver\24Solver\24-Solver\24Solver\bin\Debug\24Solver.pdb
+E:\_Visual Studio\24Solver\24Solver\24-Solver\24Solver\obj\Debug\24Solver.csprojAssemblyReference.cache
+E:\_Visual Studio\24Solver\24Solver\24-Solver\24Solver\obj\Debug\24Solver.csproj.CoreCompileInputs.cache
+E:\_Visual Studio\24Solver\24Solver\24-Solver\24Solver\obj\Debug\24Solver.exe
+E:\_Visual Studio\24Solver\24Solver\24-Solver\24Solver\obj\Debug\24Solver.pdb

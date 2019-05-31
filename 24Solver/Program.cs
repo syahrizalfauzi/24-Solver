@@ -2,62 +2,46 @@
 
 namespace _24Solver
 {
+	struct Node
+	{
+		public float val;
+		public string id;
+	}
+
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			float[] input = new float[4];
-			input[0] = 8;
-			input[1] = 3;
-			input[2] = 10;
-			input[3] = 2;
+			Node[] input = new Node[4];
+			input[0].id = "satu";
+			input[1].id = "dua";
+			input[2].id = "tiga";
+			input[3].id = "empat";
 
-			float[] output = new float[4];
+			Console.WriteLine("Input : ");
+			string inputLine = Console.ReadLine();
+			string[] inputs = inputLine.Split(' ');
+
+			for(int i = 0; i < 4; i++)
+				float.TryParse(inputs[i], out input[i].val);
+
+			Node[] output = new Node[4];
 
 			for (int e = 0; e < 4; e++)
 			{
-				if (e == 0)
-					output[0] = input[0];
-				else if (e == 1)
-					output[0] = input[1];
-				else if (e == 2)
-					output[0] = input[2];
-				else if (e == 3)
-					output[0] = input[3];
-				for (int f = 0; f < 4; f++)
+				output[0] = input[e];
+				for (int f = 1; f <= 4; f++)
 				{
-					if (f == 0)
-						output[1] = input[1];
-					else if (f == 1)
-						output[1] = input[2];
-					else if (f == 2)
-						output[1] = input[3];
-					else if (f == 3)
-						output[1] = input[0];
-					for (int g = 0; g < 4; g++)
+					output[1] = input[f % 4];
+					for (int g = 1; g <= 4; g++)
 					{
-						if (g == 0)
-							output[2] = input[2];
-						else if (g == 1)
-							output[2] = input[3];
-						else if (g == 2)
-							output[2] = input[0];
-						else if (g == 3)
-							output[2] = input[1];
-						for (int h = 0; h < 4; h++)
+						output[2] = input[(g + 1) % 4];
+						for (int h = 1; h <= 4; h++)
 						{
-							if (h == 0)
-								output[3] = input[3];
-							else if (h == 1)
-								output[3] = input[0];
-							else if (h == 2)
-								output[3] = input[1];
-							else if (h == 3)
-								output[3] = input[2];
-
-							if (output[0] != output[1] && output[0] != output[2] && output[0] != output[3] &&
-								output[1] != output[2] && output[1] != output[3] &&
-								output[2] != output[3])
+							output[3] = input[(h + 2) % 4];
+							if (output[0].id != output[1].id && output[0].id != output[2].id && output[0].id != output[3].id &&
+								output[1].id != output[2].id && output[1].id != output[3].id &&
+								output[2].id != output[3].id)
 							{
 								for (int i = 0; i < 4; i++)
 								{
@@ -70,31 +54,31 @@ namespace _24Solver
 											switch (i)
 											{
 												case 0:
-													ab = output[0] + output[1];
+													ab = output[0].val + output[1].val;
 													break;
 												case 1:
-													ab = output[0] - output[1];
+													ab = output[0].val - output[1].val;
 													break;
 												case 2:
-													ab = output[0] * output[1];
+													ab = output[0].val * output[1].val;
 													break;
 												case 3:
-													ab = output[0] / output[1];
+													ab = output[0].val / output[1].val;
 													break;
 											}
 											switch (k)
 											{
 												case 0:
-													cd = output[2] + output[3];
+													cd = output[2].val + output[3].val;
 													break;
 												case 1:
-													cd = output[2] - output[3];
+													cd = output[2].val - output[3].val;
 													break;
 												case 2:
-													cd = output[2] * output[3];
+													cd = output[2].val * output[3].val;
 													break;
 												case 3:
-													cd = output[2] / output[3];
+													cd = output[2].val / output[3].val;
 													break;
 											}
 											switch (j)
@@ -162,7 +146,7 @@ namespace _24Solver
 														ctod = " / ";
 														break;
 												}
-												Console.WriteLine("(" + output[0] + atob + output[1] + ")" + bridge + "(" + output[2] + ctod + output[3] + ")" + " = 24");
+												Console.WriteLine("(" + output[0].val + atob + output[1].val + ")" + bridge + "(" + output[2].val + ctod + output[3].val + ")" + " = 24");
 												break;
 											}
 										}
